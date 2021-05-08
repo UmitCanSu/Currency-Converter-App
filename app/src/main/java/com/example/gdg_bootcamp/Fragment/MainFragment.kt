@@ -137,7 +137,6 @@ class MainFragment : Fragment(),RvAdapter.Listener {
             moneyType = "₺";
             moneyCode ="TRY"
         }
-        println("Button Tiklandi")
 
         for (button2 in buttonList){
             if(button2.id ==button.id ){
@@ -221,11 +220,12 @@ class MainFragment : Fragment(),RvAdapter.Listener {
                 if(!json.equals("")){
                     var currencyModel: CurrencyModel = Gson().fromJson(json, CurrencyModel::class.java)
                     mAccountView.readAllData.observe(requireActivity(), androidx.lifecycle.Observer {
-                        var action = MainFragmentDirections
+
                         var adapter  = RvAdapter(requireContext(),it,moneyType,this@MainFragment,currencyModel,binding.spendingText)
                         binding.recyclerView.adapter = adapter
                     })
                 }
+
 
 
             }
