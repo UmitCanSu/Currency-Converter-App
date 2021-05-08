@@ -44,7 +44,7 @@ class MainFragment : Fragment(),RvAdapter.Listener {
         sharedPareferences = requireActivity().getSharedPreferences("com.example.gdg_bootcamp.Fragment",Context.MODE_PRIVATE)
         arguments?.let {
             moneyType = MainFragmentArgs.fromBundle(it).moneyType
-            println("(((((("+moneyType)
+
 
         }
     }
@@ -84,7 +84,6 @@ class MainFragment : Fragment(),RvAdapter.Listener {
 
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        println("--<"+moneyType)
         selectedButton()
 /*
         mAccountView.readAllData.observe(requireActivity(), androidx.lifecycle.Observer {
@@ -154,7 +153,6 @@ class MainFragment : Fragment(),RvAdapter.Listener {
 
     }
     fun selectedButton(){
-        println("-->"+moneyType+"------"+moneyCode)
         for (button in buttonList){
             if(button.hint.equals(moneyType)){
                 button.setTextColor(YELLOW)
