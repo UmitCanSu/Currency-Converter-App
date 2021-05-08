@@ -9,13 +9,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.example.gdg_bootcamp.R
 import com.example.gdg_bootcamp.VT.Account
-import com.example.gdg_bootcamp.VT.AccountViewModel
+import com.example.gdg_bootcamp.Model.AccountViewModel
 import com.example.gdg_bootcamp.databinding.FragmentDetailBinding
 
 class DetailFragment : Fragment() {
 
     lateinit var binding: FragmentDetailBinding
-    lateinit var mAccoundModelView:AccountViewModel
+    lateinit var mAccoundModelView: AccountViewModel
     var moneyTypeString ="₺"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

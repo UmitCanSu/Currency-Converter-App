@@ -1,16 +1,19 @@
-package com.example.gdg_bootcamp.VT
+package com.example.gdg_bootcamp.Model
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.gdg_bootcamp.VT.Account
+import com.example.gdg_bootcamp.VT.AccountDataBase
+import com.example.gdg_bootcamp.VT.AccountRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class AccountViewModel(application: Application) :AndroidViewModel(application) {
 
     val readAllData : LiveData<List<Account>>
-    private  val repository :AccountRepository
+    private  val repository : AccountRepository
 
     init {
         val accountDao = AccountDataBase.getDatabase(application).accoundDao()

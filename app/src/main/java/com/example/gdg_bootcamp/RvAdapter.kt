@@ -4,24 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
-import androidx.lifecycle.LiveData
-import androidx.navigation.NavDirections
 import androidx.recyclerview.widget.RecyclerView
-import com.airbnb.lottie.parser.IntegerParser
+import com.example.gdg_bootcamp.Model.CurrencyModel
 import com.example.gdg_bootcamp.VT.Account
 import com.example.gdg_bootcamp.databinding.RvRowBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import java.net.Proxy
 
 class RvAdapter(private val contex:Context, private val accountList: List<Account>,
-                private val moneyType:String,private val listener:Listener, private val currency:CurrencyModel,
+                private val moneyType:String, private val listener:Listener, private val currency: CurrencyModel,
                 private val spendMoney:TextView) :
     RecyclerView.Adapter<RvAdapter.CardViewNesneTutucu>() {
 

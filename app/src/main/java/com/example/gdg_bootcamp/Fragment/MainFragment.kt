@@ -10,16 +10,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.gdg_bootcamp.CurrencyAPI
-import com.example.gdg_bootcamp.CurrencyModel
-import com.example.gdg_bootcamp.R
+import com.example.gdg_bootcamp.Services.CurrencyAPI
+import com.example.gdg_bootcamp.Model.CurrencyModel
 import com.example.gdg_bootcamp.RvAdapter
 import com.example.gdg_bootcamp.VT.Account
-import com.example.gdg_bootcamp.VT.AccountViewModel
+import com.example.gdg_bootcamp.Model.AccountViewModel
 import com.example.gdg_bootcamp.databinding.FragmentMainBinding
 import com.google.gson.Gson
 import retrofit2.Call
@@ -32,7 +30,7 @@ import kotlin.collections.ArrayList
 
 class MainFragment : Fragment(),RvAdapter.Listener {
     lateinit var binding:FragmentMainBinding
-    lateinit var mAccountView:AccountViewModel
+    lateinit var mAccountView: AccountViewModel
     var moneyType = "₺"
     var moneyCode ="TRY"
     var spendMoney = 0;
@@ -171,15 +169,11 @@ class MainFragment : Fragment(),RvAdapter.Listener {
                 }else {
                     moneyCode ="TRY"
                 }
-                println(moneyType+"------"+moneyCode+ "b- "+ button.hint)
-
             }else{
                 button.setTextColor(BLACK)
             }
             loadData(moneyCode,moneyType)
         }
-
-
     }
     private fun loadData(type:String,moneyType:String){
         val retrofit = Retrofit.Builder()
@@ -225,7 +219,7 @@ class MainFragment : Fragment(),RvAdapter.Listener {
                 println("Hata")
                  val json = sharedPareferences.getString(type,"")
                 if(!json.equals("")){
-                    var currencyModel:CurrencyModel = Gson().fromJson(json,CurrencyModel::class.java)
+                    var currencyModel: CurrencyModel = Gson().fromJson(json, CurrencyModel::class.java)
                     mAccountView.readAllData.observe(requireActivity(), androidx.lifecycle.Observer {
                         var action = MainFragmentDirections
                         var adapter  = RvAdapter(requireContext(),it,moneyType,this@MainFragment,currencyModel,binding.spendingText)

@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.example.gdg_bootcamp.R
 import com.example.gdg_bootcamp.VT.Account
-import com.example.gdg_bootcamp.VT.AccountViewModel
+import com.example.gdg_bootcamp.Model.AccountViewModel
 import com.example.gdg_bootcamp.databinding.FragmentAccountAddBinding
 
 class AccountAddFragment : Fragment() {

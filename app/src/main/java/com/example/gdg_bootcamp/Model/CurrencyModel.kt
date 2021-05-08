@@ -1,4 +1,4 @@
-package com.example.gdg_bootcamp
+package com.example.gdg_bootcamp.Model
 
 import com.google.gson.annotations.SerializedName
 

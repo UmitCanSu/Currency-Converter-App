@@ -1,6 +1,6 @@
-package com.example.gdg_bootcamp
+package com.example.gdg_bootcamp.Services
 
-import androidx.lifecycle.LiveData
+import com.example.gdg_bootcamp.Model.CurrencyModel
 import retrofit2.Call
 import retrofit2.http.GET
 
