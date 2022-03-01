@@ -7,9 +7,10 @@
     tools:context=".Fragment.ChanceNameFragment">
 
     <TextView
+        android:id="@+id/promotionPageText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="İsim Değiştir"
+        android:text="Login"
         android:textSize="50dp"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +32,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="601dp"
         android:layout_height="wrap_content"
-        android:hint="İsminizi Giriniz"
+
         android:textColorHint="@color/orange"
         app:boxCornerRadiusBottomEnd="40dp"
         app:boxCornerRadiusBottomStart="40dp"

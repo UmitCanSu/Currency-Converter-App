@@ -11,20 +11,27 @@ import androidx.navigation.Navigation
 import com.example.gdg_bootcamp.Fragment.OnBoardFragmentDirections
 import com.example.gdg_bootcamp.R
 import com.example.gdg_bootcamp.databinding.FragmentOnBoardBinding
+import java.util.*
 
 class OnBoardFragment : Fragment() {
 
-    lateinit var sharedPreferences : SharedPreferences
-    lateinit var textList: ArrayList<String>
-    lateinit var animList: ArrayList<Int>
-    lateinit var binding: FragmentOnBoardBinding
-    var counter = 0;
+    private lateinit var sharedPreferences : SharedPreferences
+    private lateinit var textList: ArrayList<String>
+    private lateinit var animList: ArrayList<Int>
+    private lateinit var binding: FragmentOnBoardBinding
+    private var counter = 0;
+    private lateinit var promotionTextList :ArrayList<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         textList = ArrayList<String>()
-        textList.add("Karşınızda Harcama Takip Uygulaması \n Artık karışıkılığa son")
-        textList.add("Kolayca Kategorilendir \n Harcamalarınızı kategorileyerek daha kola takip edin!")
-        textList.add("Kolayca Kategorilendir \n Harcamalarınızı kategorileyerek daha kola takip edin!  ")
+        textList.add("Karşınızda Harcama Takip Uygulaması ")
+        textList.add("Kolayca Kategorilendir ")
+        textList.add("Kolayca Kategorilendir    ")
+
+        promotionTextList = ArrayList<String>()
+        promotionTextList.add("Artık karışıkılığa son")
+        promotionTextList.add("Harcamalarınızı kategorileyerek daha kola takip edin!")
+        promotionTextList.add("Harcamalarınızı kategorileyerek daha kola takip edin!")
 
 
         animList = ArrayList<Int>()
@@ -56,8 +63,9 @@ class OnBoardFragment : Fragment() {
             binding.button.setOnClickListener {
                 counter++;
                 if(animList.size != counter) {
-                    binding.textView.text = textList[counter];
+                    binding.textView.text = textList[counter]
                     binding.lottieAnimationView.setAnimation(animList[counter])
+                    binding.promotionText.text = promotionTextList[counter]
 
                     binding.lottieAnimationView.playAnimation()
                     binding.lottieAnimationView.loop(true)
